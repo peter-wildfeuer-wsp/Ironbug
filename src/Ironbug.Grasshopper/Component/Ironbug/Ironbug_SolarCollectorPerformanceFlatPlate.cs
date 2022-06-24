@@ -2,13 +2,13 @@
 using Grasshopper.Kernel;
 namespace Ironbug.Grasshopper.Component
 {
-    public class Ironbug_SolarCollectorFlatPlateWater : Ironbug_DuplicableHVACWithParamComponent
+    public class Ironbug_SolarCollectorPerformanceFlatPlate : Ironbug_DuplicableHVACWithParamComponent
     {
-        public Ironbug_SolarCollectorFlatPlateWater()
-          : base("IB_SolarCollectorFlatPlateWater", "SolarCollectorFlatPlateWater",
+        public Ironbug_SolarCollectorPerformanceFlatPlate()
+          : base("IB_SolarCollectorCollectorPerformanceFlatPlate", "SolarCollectorCollectorPerformanceFlatPlate",
               "Description",
               "Ironbug", "02:LoopComponents",
-              typeof(HVAC.IB_SolarCollectorFlatPlateWater_FieldSet))
+              typeof(HVAC.IB_SolarCollectorPerformanceFlatPlate_FieldSet))
         {
         }
 
@@ -19,12 +19,12 @@ namespace Ironbug.Grasshopper.Component
         }
         protected override void RegisterOutputParams(GH_OutputParamManager pManager)
         {
-            pManager.AddGenericParameter("SolarCollectorFlatPlateWater", "SolarCollectorFlatPlateWater", "Connect to hot water loop's supply side.", GH_ParamAccess.item);
+            pManager.AddGenericParameter("SolarCollectorPerformanceFlatPlate", "SolarCollectorPerformanceFlatPlate", "Connect to hot water loop's supply side.", GH_ParamAccess.item);
         }
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            var obj = new HVAC.IB_SolarCollectorFlatPlateWater();
+            var obj = new HVAC.IB_SolarCollectorPerformanceFlatPlate();
             this.SetObjParamsTo(obj);
             var objs = this.SetObjDupParamsTo(obj);
             DA.SetDataList(0, objs);

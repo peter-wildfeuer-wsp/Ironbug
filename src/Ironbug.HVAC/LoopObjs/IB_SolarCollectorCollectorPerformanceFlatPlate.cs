@@ -4,12 +4,12 @@ using OpenStudio;
 
 namespace Ironbug.HVAC
 {
-    public class IB_SolarCollectorFlatPlateWater : IB_HVACObject, IIB_PlantLoopObjects
+    public class IB_SolarCollectorPerformanceFlatPlate : IB_HVACObject, IIB_PlantLoopObjects
     {
-        protected override Func<IB_ModelObject> IB_InitSelf => () => new IB_SolarCollectorFlatPlateWater();
+        protected override Func<IB_ModelObject> IB_InitSelf => () => new IB_SolarCollectorPerformanceFlatPlate();
 
-        private static SolarCollectorFlatPlateWater NewDefaultOpsObj(Model model) => new SolarCollectorFlatPlateWater(model);
-        public IB_SolarCollectorFlatPlateWater() : base(NewDefaultOpsObj(new Model()))
+        private static SolarCollectorPerformanceFlatPlate NewDefaultOpsObj() => new SolarCollectorPerformanceFlatPlate();
+        public IB_SolarCollectorPerformanceFlatPlate() : base(NewDefaultOpsObj(new Model()))
         {
         }
         public override HVACComponent ToOS(Model model)
@@ -19,9 +19,9 @@ namespace Ironbug.HVAC
     }
 
 
-    public sealed class IB_SolarCollectorFlatPlateWater_FieldSet
+    public sealed class IB_SolarCollectorPerformanceFlatPlate_FieldSet
         : IB_FieldSet<IB_SolarCollectorFlatPlateWater_FieldSet, SolarCollectorFlatPlateWater>
     {
-        private IB_SolarCollectorFlatPlateWater_FieldSet() { }
+        private IB_SolarCollectorPerformanceFlatPlate_FieldSet() { }
     }
 }
