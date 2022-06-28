@@ -26,7 +26,7 @@ namespace Ironbug.Grasshopper.Component
             // I believe all of these parameters are necessary, but I'm not sure whether I need to explicitly add ALL of the parameters listed in
             // https://bigladdersoftware.com/epx/docs/8-0/input-output-reference/page-025.html#waterheaterheatpump -- it seems that the Ironbug_DuplicableHVACWithParamComponent class takes care of that
             pManager.AddGenericParameter("Water Heater Mixed", "waterHeater_", "Water Heater Mixed. use WaterHeaterMixed", GH_ParamAccess.item);
-            pManager.AddGenericParameter("HeatingCoil", "coilH_", "Heating coil to provide heating source..", GH_ParamAccess.item);
+            //pManager.AddGenericParameter("HeatingCoil", "coilH_", "Heating coil to provide heating source..", GH_ParamAccess.item);
             pManager.AddGenericParameter("Fan", "fan_", "Supply fan. By default, no fan is included.", GH_ParamAccess.item);
         }
 
@@ -46,7 +46,7 @@ namespace Ironbug.Grasshopper.Component
 
 
             var waterHeater = (IB_WaterHeaterMixed)null;
-            var coilH = (IB_CoilDX)null;
+            //var coilH = (IB_CoilDX)null;
             var fan = (IB_Fan)null;
             
 
@@ -55,12 +55,12 @@ namespace Ironbug.Grasshopper.Component
                 obj.SetTank(waterHeater);
             }
 
-            if (DA.GetData(1, ref coilH))
-            {
-                obj.SetHeatingCoil(coilH);
-            }
+            //if (DA.GetData(1, ref coilH))
+            //{
+                //obj.SetHeatingCoil(coilH);
+            //}
 
-            if (DA.GetData(2, ref fan))
+            if (DA.GetData(1, ref fan))
             {
                 obj.SetFan(fan);
             }
