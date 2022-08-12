@@ -34,6 +34,9 @@ namespace Ironbug.HVAC
             }else if (htSource.to_CoilCoolingDXTwoSpeed().is_initialized())
             {
                 htSource.to_CoilCoolingDXTwoSpeed().get().addToNode(node);
+            }else if (htSource.to_CoilCoolingDXTwoStageWithHumidityControlMode().is_initialized())
+            {
+                htSource.to_CoilCoolingDXTwoStageWithHumidityControlMode().get().addToNode(node);
             }
 
             return newObj.addToNode(node);
